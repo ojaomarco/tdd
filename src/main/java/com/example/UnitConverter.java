@@ -2,7 +2,7 @@ package com.example;
 
 public class UnitConverter {
     public float convertKmToMiles(float kilometers){
-        float miles = kilometers * 1.6f;
+        float miles = kilometers / 1.609f;
         return miles;
     }
 

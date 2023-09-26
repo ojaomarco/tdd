@@ -7,19 +7,20 @@ import org.junit.Test;
 
 public class AppTest 
 {
+    final float ACCEPTED_DIFFERENCE = 0.01f;
 
     @Test
     public void shouldConvertKmToMiles(){
         //Given 
         float km = 10;
-        float miles = 6.2137f;
+        float expectedMiles = 6.2137f;
 
         //Action
         UnitConverter uc = new UnitConverter();
         float result = uc.convertKmToMiles(km);
 
         //Check
-        boolean condition = result == miles;
+        boolean condition = (result - expectedMiles) < ACCEPTED_DIFFERENCE;
         assertTrue(condition);
     }
 
@@ -27,14 +28,14 @@ public class AppTest
     public void shouldConvertLbToKg(){
         //Given
         float lbs = 10;
-        float kgs = 4.5359f;
+        float expectedKgs = 4.5359f;
 
         //Action
         UnitConverter uc = new UnitConverter();
         float result = uc.convertLbToKg(lbs);
 
         //Check
-        boolean condition = result == kgs;
+        boolean condition = (result - expectedKgs) < ACCEPTED_DIFFERENCE;
         assertTrue(condition);
     }
    
@@ -49,7 +50,7 @@ public class AppTest
         float result = uc.convertCelsiusToFh(celsius);
 
         //Check
-        boolean condition = result == expectedFarenheit;
+        boolean condition = (expectedFarenheit - result) < ACCEPTED_DIFFERENCE;
         assertTrue(condition);
     }
 
