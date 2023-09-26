@@ -10,22 +10,46 @@ public class AppTest
 
     @Test
     public void shouldConvertKmToMiles(){
+        //Given 
+        float km = 10;
+        float miles = 6.2137f;
+
+        //Action
         UnitConverter uc = new UnitConverter();
-        boolean condition = uc.convertKmToMiles(10) == 6.2137f;
+        float result = uc.convertKmToMiles(km);
+
+        //Check
+        boolean condition = result == miles;
         assertTrue(condition);
     }
 
     @Test
     public void shouldConvertLbToKg(){
+        //Given
+        float lbs = 10;
+        float kgs = 4.5359f;
+
+        //Action
         UnitConverter uc = new UnitConverter();
-        boolean condition = uc.convertLbToKg(5.5f) == 24.9476f;
+        float result = uc.convertLbToKg(lbs);
+
+        //Check
+        boolean condition = result == kgs;
         assertTrue(condition);
     }
    
     @Test
     public void shouldConvertCelsiusToFarenheit(){
+        //Given
+        float celsius = 35;
+        float expectedFarenheit = 95;
+
+        //Action
         UnitConverter uc = new UnitConverter();
-        boolean condition = uc.convertCelsiusToFh(32) == 89.6f;
+        float result = uc.convertCelsiusToFh(celsius);
+
+        //Check
+        boolean condition = result == expectedFarenheit;
         assertTrue(condition);
     }
 
